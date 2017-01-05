@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>填写投保地址</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="填写投保地址">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+<style>
+    .model-form .weui_label {
+        width:6em;
+    }
+	.model-form .weui_input {
+		text-align:left;
+	}
+	.model-form select {
+		color:#999;
+	}
+	.model-form .weui_cell::before {
+		right:10px;
+		width:auto;
+	}
+</style>
+</head>
+
+<body ontouchstart="" style="padding-bottom:30px;">
+
+    <a href="../去投保/保单地址填写成功.html"><img width="100%" src="../img/qqwww.png"/></a>
+    
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
++function($){
+	'use strict';
+	
+	$(document.forms[0]).on('change','select',function(){
+		if(this.selectedIndex!==0){
+			this.style.color='#333';
+		}else {
+			this.style.color='#999';
+		}
+	}).check();
+}(window.jQuery);
+</script>
+</html>

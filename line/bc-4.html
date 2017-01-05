@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>恋爱消费保</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="恋爱消费保">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+</head>
+
+<body ontouchstart="" class="animation">
+<form class="model-form bc-4">
+<section class="model-operator-interface">
+    <div class="model-oi-head layout-tr">
+        <div><img class="shop" src="../images/model-oi-head-shop.png" alt="商店"></div>
+        <div class="layout-td glb-para-big glb-text-of">北京甜蜜蜜婚纱摄影北京甜蜜蜜婚纱摄影北京甜蜜蜜婚纱摄影</div>
+        <div class="glb-para-sm">操作员<span class="glb-red">张三</span></div>
+    </div>
+    <div class="layout-tr normal animation">
+		<h2 class="glb-para glb-text-center bc4-title">今日可用额度<big class="glb-orange">10000.00</big>元</h2>
+        <div class="weui_cells weui_cells_form classic">
+            
+            <div class="weui_cell" data-blz-keyboard="true" data-blz-input="true">
+                <div class="weui_cell_hd"><label for="" class="glb-para" style="pointer-events: none;">消费金额(元)</label></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input type="text" class="weui_input price" readonly data-blz-tofixed="2" data-blz-sync=".sync" data-blz-type="price" data-blz-max="500000">
+                    <!--<span class="weui_input sync glb-text-right glb-green"></span>-->
+                </div>
+                <div class="blz-pointer glb-twinkle glb-hide" style="top:0;"></div>
+                <i class="weui_icon_warn"></i>
+            </div>
+            
+            <label class="weui_cell" style="display: -webkit-box;display: -webkit-flex;display: flex;">
+                <div class="weui_cell_hd"><span class="glb-para">保额口令</span></div>
+                <div class="weui_cell_bd weui_cell_primary">
+                    <input type="number" pattern="[0-9]*" class="weui_input glb-text-right" data-blz-type="any" placeholder="请输入保额口令" data-blz-alert="保额口令格式错误">
+                </div>
+                <i class="weui_icon_warn"></i>
+            </label>
+        </div>
+        <div class="layout-tr glb-para" style="padding-left:15px;padding-right:15px;">
+            <div>确认保额(元)</div>
+            <input type="text" class="weui_input sync glb-for-screen" readonly data-blz-sync-map="1" data-blz-tofixed="2" data-blz-sync=".sync-2">
+            <div class="layout-td sync-2 glb-text-right">0.00</div>
+        </div>
+        <div class="layout-tr">
+            <input type="submit" class="weui_btn weui_btn_primary" value="确认" data-blz-keyboard-submit>
+        </div>
+    </div>
+</section>
+</form>
+
+<!--键盘-->  
+<table class="glb-keyboard glb-slide-below glb-submit-available" cellspacing="0" data-blz-keyboard="true">
+    <caption><span class="glb-for-screen">虚拟键盘</span></caption>
+    <tbody>
+        <tr>
+            <td role="button">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td class="glb-keyb-delete"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td rowspan="3" class="glb-keyb-confirm">确认</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td class="glb-keyb-hide" data-blz-keyboard="false"></td>
+            <td>0</td>
+            <td>.</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
+    +function($){
+        'use strict';
+        
+        // 更改表单验证规则
+        $.blz.checkRule.any=[[4,4]];
+        
+        $('form').check({
+	        getVerificationCode:function($elem){
+                
+            },
+            canSubmit:function(event){
+                
+                $.weui.loading('数据提交中');
+				
+                var $elem=$(this).find('.price');
+				var val=$elem.data('blz-value');
+				$elem.val(val);
+				
+                // 同步ajax操作验证口令正确与否
+                $.ajax({
+                    url:'',
+                    async:false,
+                    data:{},
+                    success:function(canSubmit){
+                        if(!canSubmit){
+                            event.preventDefault();
+                            $.weui.loading().hide();
+                            $.weui.alert({
+                                article:'保额口令错误',
+                                sureCallback:function(){
+                                    $('input[type="number"]').val('').focus()[0];
+                                    setTimeout(function(){
+                                        $('input[type="number"]')[0].scrollIntoViewIfNeeded()
+                                    },30);
+                                }
+                            });
+                        }
+                    },
+                    error: function(){
+                        event.preventDefault();
+                        $.weui.loading().hide();
+                        $.weui.alert({
+                            article:'服务器繁忙，请稍后尝试'
+                        });
+                    }
+                });
+            }
+	    });
+        
+        //金额美化函数
+		function lookBetter(val){
+			if(val===''){return '';}
+			val=val.toString();
+			var betterVal='';
+			var a=[];
+			var index=val.indexOf('.');
+			var l=parseInt(val).toString().length;
+			for(var i=l;i>=3;i-=3){
+				a[a.length]=val.slice(i-3,i);
+			}
+			if(l%3!==0){
+				a[a.length]=val.slice(0,l%3);
+			}
+			for(i=a.length-1;i>0;i--){
+				betterVal+=a[i]+',';
+			}
+			betterVal+=a[0];
+			if(index!==-1){
+				betterVal+=val.slice(index,val.length);
+			}
+			return betterVal;
+		}
+		
+		// 获取不可见的input元素；
+        var $Input=$('.weui_input.price');
+		
+		// 当模拟input失去焦点时将所有同步于该input元素的值保留小数两位
+        $Input.on('blurSimulation',function(){
+			if($(this).data('blz-value')){
+				var val=($(this).data('blz-value')-0).toFixed(2);
+				$(this).val(lookBetter(val));
+			}
+        });
+    }(window.jQuery);
+</script>
+</html>

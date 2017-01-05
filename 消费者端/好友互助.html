@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>好友互助</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="好友互助">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+</head>
+
+<body ontouchstart="" class="animation">
+<div class="model-tab tyl-hyhz">
+    <div class="model-tab-nav classic glb-title">
+        <div class="layout-tr">
+            <div class="layout-td">
+                <a href="#tab1" class="item active" data-blz-toggle="blz-tab">帮助我的</a>
+            </div>
+            <div class="layout-td">
+                <a href="#tab2" class="item" data-blz-toggle="blz-tab">我帮助的</a>
+            </div>
+        </div>    
+    </div>
+    
+    <div class="model-tab-content animation">
+        
+        <!--收取记录无任何记录或者使用记录无任何记录-->
+        <p class="zbsj-none" id="tab1 or tab2">
+			暂无记录
+		</p>
+        <div id="tab1" class="glb-fade-out glb-fade-in">
+			<section class="sqsy-summary glb-border-left glb-border-right">
+				<div class="sqsy-summ-para">好友累计帮我收取</div>
+				<p class="glb-title-sb glb-red sqsy-summ-number"><span id="total-price">1100.00</span><small>元</small></p>
+				<div style="padding:15px; padding-top:0;">
+					<a class="weui_btn weui_btn_primary" href="javascript:void(0);" data-blz-show="#glb-share-1">让更多好友帮我</a>
+				</div>
+				
+			</section>
+			<section class="sqsy-consume used glb-border-top hyhz-help-me">
+				<ul>
+					<li class="sqsy-consume-item-box glb-border-bottom">
+						<a class="layout-tr sqsy-consume-item" href="javascript:void(0);">
+							<img class="bc2-user-head" src="../images/bc2-user-head-2.png" alt="赵四">
+							<div class="layout-td glb-text-of-2">
+								<div class="glb-font-15">赵四</div>
+								<div class="glb-font-12">已帮我2次</div>
+							</div>
+							<div class="glb-font-16"><span class="price">1000.00</span><small>元</small></div>
+						</a>
+					</li>
+					<li class="sqsy-consume-item-box glb-border-bottom">
+						<a class="layout-tr sqsy-consume-item" href="javascript:void(0);">
+							<img class="bc2-user-head" src="../images/bc2-user-head-2.png" alt="刘能">
+							<div class="layout-td glb-text-of-2">
+								<div class="glb-font-15">刘能</div>
+								<div class="glb-font-12">已帮我1次</div>
+							</div>
+							<div class="glb-font-16"><span class="price">1000.00</span><small>元</small></div>
+						</a>
+					</li>
+				</ul>
+			</section>
+		</div>
+   
+   		<!--选项二-->
+		<div id="tab2"  class="glb-fade-out hyhz-help-her">
+			<section class="sqsy-consume used glb-border-top">
+				<ul>
+					<li class="sqsy-consume-item-box glb-border-bottom">
+						<div class="layout-tr sqsy-consume-item">
+							<img class="bc2-user-head" src="../images/bc2-user-head-2.png" alt="赵四">
+							<div class="layout-td glb-text-of-2">
+								<div class="glb-font-15 name">赵四</div>
+								<div class="glb-font-12">已帮TA 2次</div>
+							</div>
+							<div class="glb-font-16"><span class="price">1000.00</span><small>元</small></div>
+						</div>
+						<span class="glb-delete layout-tr" data-blz-delete=".weui_cells">不在<br>帮TA</span>
+					</li>
+					<li class="sqsy-consume-item-box glb-border-bottom">
+						<div class="layout-tr sqsy-consume-item">
+							<img class="bc2-user-head" src="../images/bc2-user-head-2.png" alt="刘能">
+							<div class="layout-td glb-text-of-2">
+								<div class="glb-font-15 name">刘能</div>
+								<div class="glb-font-12">未帮助过TA</div>
+							</div>
+							<div class="glb-font-16"><span class="price">0.00</span><small>元</small></div>
+						</div>
+						<span class="glb-delete layout-tr" data-blz-delete=".weui_cells">不在<br>帮TA</span>
+					</li>
+				</ul>
+			</section>
+		</div>
+    </div>        
+</div>
+<div id="glb-share-1" class="glb-full-screen" style="display: none; background-color:rgba(0,0,0,0.6);" data-blz-dismiss="#glb-share-1">
+	<img src="../images/glb-share-1.png" style="width:100%;">
+</div>
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript" src="../js/blz-swipe.js"></script>
+<script type="application/javascript">
++function($,document){
+	'use strict';
+
+	var hack=blz.checkBrowerKernel();
+	var l=$('.bc2-user-head').width()+15;
+	var o={
+		initialPosition:0,
+		displacement:l,
+		maxDistance:l,
+		swipeRight:false,
+		slideElement:'#tab2 .sqsy-consume-item',
+		prevElement:null,
+		touchStartCallback:resets,
+		noDistance:true
+	}
+	var $Delem=null;
+	
+    // 复位
+	function resets(event){
+		if($(event.target).data('blz-delete')){return false;}
+		var target=$('#tab2').data('blz-swipe').data;
+		if(target.prevElement!=null&&target.prevElement!==$(event.target).closest('#tab2 .sqsy-consume-item')){
+			target.prevElement.css(hack+'transform','translateX(0)');
+			target.prevElement=null;
+		}
+	}
+	
+	// 添加动画
+	$('#tab2').blzSlide(o);
+    
+    // 删除功能
+    $(document).on('click.delete','[data-blz-delete]',function(event){
+        
+        var $target=$(this).closest('.sqsy-consume-item-box');
+		var name=$target.find('.name').text();
+        $.weui.confirm({
+            title:'温馨提示',
+            article:'<div class="glb-text-center">不在帮助'+name+'?</div>',
+            cancelText:'否',
+            sureText:'是',
+            cancelCallback:function(){},
+            sureCallback:function(){
+                $.weui.loading();
+                $target.remove(); 
+                $.ajax({
+                    url:'',
+                    async:false,
+                    data:{},
+                    success: function(isDelete){
+                        $.weui.loading().hide();
+                        
+                        // 如果返回值为真则删除该操作员
+                        if(isDelete){
+                           $target.remove(); 
+                        }
+                    },
+                    error: function(){
+                        $.weui.loading().hide();
+                        $.weui.alert({
+                            title:'温馨提示',
+                            article:'服务器繁忙，请稍后尝试'
+                        });
+                    }
+                });
+            }
+        });
+    });
+}(window.jQuery,document);
+</script>	
+</html>

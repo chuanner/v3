@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>恋爱消费保</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="恋爱消费保">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+</head>
+
+<body ontouchstart="" style="height:400px;">
+<form class="model-form tyl-lx">
+	<div class="weui_cell glb-border-bottom" style="background-color: #fff;">
+		<input id="model-lx-1" class="tyl-lx-input weui_input" type="search" data-set-item="shangJia">
+		<input class="tyl-lx-search" type="button" value="确定" onclick="history.go(-1);">
+	</div>
+	<ul id="model-lx" class="weui_cells glb-font-14" style="margin-top:10px;">
+	</ul>
+</form>
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
++function($){
+	'use strict';
+	
+	// websocket实现
+	var communication=new WebSocket('ws://chanelnumberfive.github.io/liang-nian-love/data/bd.json');
+	
+	// 联想
+	var $modelLx1=$('#model-lx-1'),
+		$modelLx=$('#model-lx'),
+		timer=null;
+	
+	communication.onopen=function(){
+		console.log('websockit开启成功');
+	}
+	
+	// 接收消息
+	communication.onmessage=function(e){
+		var data=e.data;
+		var l=data.length,
+			i=0,
+			html='';
+		for(;i<l;i++){
+			html+='<li class="weui_cell model-lx-item">'+data[i]+'</li>';
+		}
+		$modelLx.html(html);
+	};
+	
+	// 发送消息
+	$modelLx1.on('keyup',function(){
+		clearTimeout(timer);
+		timer=setTimeout(function(){
+			communication.send($modelLx1.val());
+		},300);
+	});
+	
+	// 用户输入选择交互
+	$modelLx.on('click','.model-lx-item',function(){
+		$modelLx1.val(this.textContent);
+		$modelLx.css('display','none');
+		localStorage.setItem($modelLx1[0].dataset.setItem,this.textContent);
+		history.go(-1);
+	});
+	document.querySelector('.tyl-lx-search').addEventListener('click',function(){
+		localStorage.setItem($modelLx1[0].dataset.setItem,$modelLx1.val());
+		history.go(-1);
+	});
+}(window.jQuery);
+</script>
+</html>

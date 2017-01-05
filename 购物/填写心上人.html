@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>恋爱消费保</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="恋爱消费保">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+</head>
+
+<body ontouchstart="">
+	<form class="tyl-qtxxsr model-form">
+		<div class="qtxxsr-upload-box"><input class="qtxxsr-upload glb-full-box" name="upload" type="file" aria-label="上传用户头像"></div>
+		<div class="weui_cells weui_cells_form first qtxxsr-form-area">
+		    <div class="weui_cell">
+				<a class="weui_btn weui_btn_primary qtxxsr-fa-go" href="javascript:void(0);">去填写心上人</a>
+            </div>
+            <div class="weui_cell" style="padding-right: 50px;">
+               <div class="weui_cell_hd">
+                   <label class="weui_label">心上人</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" value="赵岚" placeholder="请输入心上人姓名" readonly tabindex="-1">
+				   <select class="weui_select">
+					   <option selected="true" value="1">赵岚</option>
+					   <option value="2">小梅</option>
+					   <option value="3">如燕</option>
+				   </select>
+               </div>
+			   <div class="model-pointer"></div>
+               <i class="weui_icon_warn"></i>
+            </div>
+            <div class="weui_cell" style="padding-right: 50px;">
+               <div class="weui_cell_hd">
+                   <label class="weui_label">投保人</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" value="李煜" placeholder="请输入投保人姓名" data-blz-type="name">
+               </div>
+               <i class="weui_icon_warn"></i>
+            </div>
+            <div class="weui_cell" style="padding-right: 50px;">
+               <div class="weui_cell_hd">
+                   <label class="weui_label">投保金额</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" value="1000" placeholder="请选择保费额度" readonly tabindex="-1" data-blz-type="any">
+				   <select class="weui_select">
+					   <option selected="true" value="1">1000</option>
+					   <option value="2">2000</option>
+					   <option value="3">3000</option>
+				   </select>
+               </div>
+			   <div class="model-pointer"></div>
+               <i class="weui_icon_warn"></i>
+            </div>
+		</div>
+		<p class="qtxxsr-count-down">
+			<span style="letter-spacing: .4em">距离2017年情人节还有</span><br>
+			<span class="glb-black glb-font-15"><span class="glb-red">20</span>&nbsp;天&nbsp;<span class="glb-red">2</span>&nbsp;小时&nbsp;<span class="glb-red">49</span>&nbsp;分&nbsp;<span class="glb-red">21</span>&nbsp;秒&nbsp;</span>
+		</p>
+		<div class="model-btn-area qtxxsr-active">
+			<input style="margin-top:0;" class="weui_btn weui_btn_primary" type="submit" value="完 成">
+		</div>
+	</form>
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
++function($){
+	'use strict';
+	
+	// 保费金额选择交互
+	$('.model-form').on('change','.weui_select',function(){
+		var val=$(this).find('option:selected').text();
+		var $elem=$(this).siblings('.weui_input').val(val);
+		$elem.trigger('change');
+	});
+	
+	// 头像上传接口
+	$(document.forms[0].upload).upload({
+		onchange:function(data){
+			// 接口还未实现
+		}
+	});
+	
+	// 倒计时交互
+}(window.jQuery);	
+</script>
+</html>

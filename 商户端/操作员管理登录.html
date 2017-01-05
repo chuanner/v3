@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>超级管理员登录</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="超级管理员登录">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+<style>
+	.model-form .weui_input {
+		text-align:left;
+	}
+</style>
+</head>
+
+<body ontouchstart="">
+<form class="model-form">
+    <section class="model-list-2" style="margin-top:10px;">
+        <h2 class="weui_cells_title glb-for-screen">登录</h2>
+        <section class="weui_cells weui_cells_form">
+        
+               <div class="weui_cell">
+                   <div class="weui_cell_hd">
+                       <label class="weui_label">超级管理员账号</label>	
+                   </div>
+                   <div class="weui_cell_bd weui_cell_primary">
+                       <input class="weui_input" type="text" data-blz-type="any" placeholder="请输入账号">
+                   </div>
+                   <i class="weui_icon_warn"></i>
+               </div> 
+               
+               <div class="weui_cell">
+                   <div class="weui_cell_hd">
+                       <label class="weui_label">超级管理员密码</label>
+                   </div>
+                   <div class="weui_cell_bd weui_cell_primary">
+                       <input class="weui_input" type="password" data-blz-type="any" placeholder="请输入密码"> 
+                   </div>
+                   <i class="weui_icon_warn"></i>
+               </div> 
+                 
+        </section>
+    </section> 
+    <div class="layout-tr">
+        <div class="layout-td">
+            <input type="submit" class="weui_btn weui_btn_primary" value="登录">
+        </div>            
+    </div>   
+</form>
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+</script>
+</html>

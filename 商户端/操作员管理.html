@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>操作员管理</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="操作员管理">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+</head>
+
+<body ontouchstart="">
+<div class="tyl-czygl">   
+    <h2 class="model-list-title"><span class="glb-icon glb-icon-car"></span>奥迪4s店操作员</h2>
+    <section class="model-list-2">
+        <div class="weui_cells">
+            <span class="glb-delete layout-tr" data-blz-delete=".weui_cells">删除此<br>操作员</span>
+            <div class="weui_cell glb-bk-white">
+                <img src="../images/glb-user-head.svg" alt="用户" width="48" height="48" class="icon">
+                <div class="weui_cell_bd weui_cell_primary glb-tr-x">
+                    <h2 class="glb-title"><span class="person">小海</span><span class="glb-para-sm">（老板）</span></h2>
+                    <p class="glb-para-sm">登录手机号码&nbsp;&nbsp;18500121537</p>
+                </div>
+            </div> 
+        </div>
+        <div class="weui_cells">
+            <span class="glb-delete layout-tr" data-blz-delete=".weui_cells">删除此<br>操作员</span>
+            <div class="weui_cell glb-bk-white">
+                <img src="../images/glb-user-head.svg" alt="用户" width="48" height="48" class="icon">
+                <div class="weui_cell_bd weui_cell_primary glb-tr-x">
+                    <h2 class="glb-title"><span class="person">哈哈</span><span class="glb-para-sm">（销售）</span></h2>
+                    <p class="glb-para-sm">登录手机号码&nbsp;&nbsp;18500121537</p>
+                </div>
+            </div>
+        </div>
+        <div class="weui_cells">
+            <span class="glb-delete layout-tr" data-blz-delete=".weui_cells">删除此<br>操作员</span>
+            <div class="weui_cell glb-bk-white">
+                <img src="../images/glb-user-head.svg" alt="用户" width="48" height="48" class="icon">
+                <div class="weui_cell_bd weui_cell_primary glb-tr-x">
+                    <h2 class="glb-title"><span class="person">小海</span><span class="glb-para-sm">（销售）</span></h2>
+                    <p class="glb-para-sm">登录手机号码&nbsp;&nbsp;18500121537</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="layout-tr">
+        <div class="layout-td">
+            <a href="javascript:void(0);" class="weui_btn weui_btn_plain_primary">添加操作员</a>
+        </div>            
+    </div>
+</div>      
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript" src="../js/blz-swipe.js"></script>
+<script type="application/javascript">
++function($,document){
+	'use strict';
+    
+	var hack=blz.checkBrowerKernel();
+	var o={
+		initialPosition:0,
+		displacement:$('.icon').eq(0).width()+15,
+		maxDistance:$('.icon').eq(0).width()+15,
+		swipeRight:false,
+		slideElement:'.weui_cells>.weui_cell',
+		prevElement:null,
+		touchStartCallback:resets,
+		noDistance:true
+	}
+	var $Delem=null;
+	
+    // 复位
+	function resets(event){
+		if($(event.target).data('blz-delete')){return false};
+		var target=$('.model-list-2').data('blz-swipe').data;
+		if(target.prevElement!=null&&target.prevElement!==$(event.target).closest('.weui_cells>.weui_cell')){
+			target.prevElement.css(hack+'transform','translateX(0)');
+			target.prevElement=null;
+		}
+	}
+	
+	// 添加动画
+	$('.model-list-2').blzSlide(o);
+    
+    // 删除功能
+    $(document).on('click.delete','[data-blz-delete]',function(event){
+        
+        var target=event.target;
+        var $target=$(target).closest('.weui_cells');
+        $.weui.confirm({
+            title:'温馨提示',
+            article:'是否删除'+$('.model-list-title').text()+$target.find('.person').text(),
+            cancelText:'取消',
+            sureText:'删除',
+            cancelCallback:function(){},
+            sureCallback:function(){
+                $.weui.loading();
+                $target.remove(); 
+                $.ajax({
+                    url:'',
+                    data:{},
+                    async:false,
+                    success: function(isDelete){
+                        $.weui.loading().hide();
+                        
+                         如果返回值为真则删除该操作员
+                        if(isDelete){
+                           $target.remove(); 
+                        }
+                    },
+                    error: function(){
+                        $.weui.loading().hide();
+                        $.weui.alert({
+                            title:'温馨提示',
+                            article:'服务器繁忙，请稍后尝试'
+                        });
+                    }
+                });
+            }
+        });
+    });
+}(window.jQuery,document);
+</script>
+</html>

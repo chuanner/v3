@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>恋爱消费保</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="恋爱消费保">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+<style>
+    .model-form .weui_label {
+        width:6em;
+    }
+	.model-form .weui_input {
+		text-align:left;
+	}
+	.model-form select {
+		color:#999;
+	}
+	.model-form .weui_cell::before {
+		right:10px;
+		width:auto;
+	}
+</style>
+</head>
+
+<body ontouchstart="" style="padding-bottom:30px;">
+<div class="tyl-address">
+<section class="model-message-success glb-text-center">
+    <div class="model-ms-head">
+        <span class="success"></span>
+    </div>
+    <div class="model-ms-body">
+        <h2 class="glb-title">投保成功</h2>
+		<p class="glb-para">天安财产保险股份有限公司承保给付</p>
+    </div>
+</section>
+ <form class="model-form">
+ 	<section class="addr-address">
+        <h2 class="weui_cells_title glb-for-screen">表单</h2>
+        <div class="weui_cells weui_cells_form">
+				<h2 class="addr-address-title">保单邮寄地址</h2>
+               <div class="weui_cell">
+                   <div class="weui_cell_hd">
+                       <label class="weui_label">收件人姓名</label>
+                   </div>
+                   <div class="weui_cell_bd weui_cell_primary">
+                       <input class="weui_input" type="text" data-blz-type="name" placeholder="请输入邮件人姓名">
+                   </div>
+                   <i class="weui_icon_warn"></i>
+               </div> 
+               
+               <div class="weui_cell">
+                   <div class="weui_cell_hd">
+                       <label class="weui_label">联系电话</label>
+                   </div>
+                   <div class="weui_cell_bd weui_cell_primary">
+                       <input class="weui_input" type="tel" data-blz-type="phone" placeholder="请输入联系电话">
+                   </div>
+                   <i class="weui_icon_warn"></i>
+               </div>
+               
+               <div class="weui_cell">
+                 <div class="weui_cell_hd">
+                     <label class="weui_label">所在区域</label>
+                 </div>
+                 <div class="weui_cell_bd weui_cell_primary">
+                     <select class="weui_input" id="s_province" name="s_province" data-blz-type="address">
+                        <option>省<option>
+                        <option value="1">北京<option>
+                     </select>
+                 </div>
+                 <div class="weui_cell_bd weui_cell_primary">
+                     <select class="weui_input" id="s_city" name="s_city" data-blz-type="address">
+                        <option>市</option>
+                        <option>北京</option>
+                     </select>
+                 </div>
+                 <div class="weui_cell_bd weui_cell_primary">
+                     <select class="weui_input" id="s_county" name="s_county">
+                        <option value>区</option>
+                        <option value="1">北京</option>
+                     </select>
+                 </div>
+                 <i class="weui_icon_warn" id="warning7"></i>
+              </div>
+              
+              <div class="weui_cell">
+                 <div class="weui_cell_hd textarea">
+                     <label class="weui_label">详细地址</label>
+                 </div>
+                 <div class="weui_cell_bd weui_cell_primary">
+                     <textarea class="weui_input" type="text" data-blz-type="any" placeholder="请输入详细地址"></textarea>
+                 </div>
+                 <i class="weui_icon_warn" id="warning4"></i>
+              </div>
+        
+        </div>
+    </section>
+    <div class="layout-tr">
+        <div class="layout-td">
+            <input type="submit" class="weui_btn weui_btn_primary" value="确定">
+        </div>            
+    </div>
+</form>  
+</div>    
+    
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
++function($){
+	'use strict';
+	
+	$(document.forms[0]).on('change','select',function(){
+		if(this.selectedIndex!==0){
+			this.style.color='#333';
+		}else {
+			this.style.color='#999';
+		}
+	}).check();
+}(window.jQuery);
+</script>
+</html>

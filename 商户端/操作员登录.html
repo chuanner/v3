@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>操作员登录</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="操作员登录">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+<style>
+    .model-form .weui_label:not(.agreement) {
+        width:7em;
+    }
+	.model-form .weui_input {
+		text-align:left;
+	}
+</style>
+</head>
+
+<body ontouchstart="">
+<form class="model-form">
+    <section class="model-list-2" style="margin-top:10px;">
+        <h2 class="weui_cells_title glb-for-screen">登录</h2>
+            <section class="weui_cells weui_cells_form">
+                   <div class="weui_cell">
+                       <div class="weui_cell_hd">
+                            <label class="weui_label">登录手机号码</label>	
+                       </div>
+                       <div class="weui_cell_bd weui_cell_primary">
+                           <input class="weui_input" type="tel" data-blz-type="phone" pattern="[0-9]*" id="tel2" placeholder="请输入手机号码">
+                       </div>
+                       <i class="weui_icon_warn"></i>
+                   </div>
+                   
+                   <div class="weui_cell send">
+                         <div class="weui_cell_hd">
+                              <label class="weui_label">验证码</label>
+                         </div>
+                         <div class="weui_cell_bd weui_cell_primary">
+                              <input class="weui_input" type="number" pattern="[0-9]*" data-blz-type="check" data-blz-pattern="验证码设置" placeholder="请输入验证码">
+                         </div>
+                         <div class="glb-form-send" id="glb-form-send"><input type="button" data-blz-target="#tel2" value="获取验证码"></div>
+                    </div> 
+                     
+            </section>
+    </section>
+    <div class="layout-tr">
+        <div class="layout-td">
+            <input type="submit" class="weui_btn weui_btn_primary" value="登录">
+        </div>            
+    </div>
+</form>
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script>
+;(function($){
+    'use strict';
+    
+    $('form').check({
+		verificationCodeClass:'#glb-form-send input', 
+		getVerificationCode:function($elem){
+			// 验证码发送处
+			// 将获取的验证码设置到input[data-blz-pattern="验证码设置"]中的data-blz-pattern属性即可；
+		}
+	});
+})(window.jQuery);
+</script>
+</html>

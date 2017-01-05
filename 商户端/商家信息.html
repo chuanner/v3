@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>商户信息</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="商户信息">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+<style>
+	.weui_cell_bd {
+		min-width:8em;
+	} 
+</style>
+</head>
+
+<body ontouchstart="">
+    <section class="model-form tyl-sjxx">
+        <div class="model-mess-icon-shop weui_cells_title"></div>
+        <div class="weui_cells glb-para">
+            <p class="weui_cell">
+                <span class="weui_cell_bd glb-grey">
+                    商家名称
+                </span>
+                <span class="weui_cell_primary glb-text-right">北京中润发奥迪4s店</span>
+            </p>
+            <p class="weui_cell">
+                <span class="weui_cell_bd glb-grey">
+                    所属行业
+                </span>
+                <span class="weui_cell_primary glb-text-right">汽车</span>
+            </p>
+            <p class="weui_cell">
+                <span class="weui_cell_bd glb-grey">
+                    负责人姓名
+                </span>
+                <span class="weui_cell_primary glb-text-right">李克</span>
+            </p>
+            <p class="weui_cell">
+                <span class="weui_cell_bd glb-grey">
+                    负责人手机号码
+                </span>
+                <a href="tel:15837943874" class="weui_cell_primary glb-text-right">15837943874</a>
+            </p>
+            <p class="weui_cell">
+                <span class="weui_cell_bd glb-grey">
+                    商户地址
+                </span>
+                <span class="weui_cell_primary glb-text-right">北京市丰台区99号路东街路99号</span>
+            </p>
+        </div>
+    </section>     
+</body>
+</html>

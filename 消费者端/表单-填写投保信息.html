@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>填写投保信息</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="填写投保信息">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+<style>
+    .model-form .weui_label {
+        width:9em;
+        white-space:nowrap;
+    }
+	.model-form .weui_input {
+		text-align:left;
+	}
+</style>
+</head>
+
+<body ontouchstart="">
+<form class="model-form glb-para-big">
+    <section class="model-form-head">
+        <div class="layout-tr-x">
+            <label class="weui_label title"><span class="icon"></span>本次投保保额</label>
+            <div class="layout-td">800.00元</div>
+        </div>
+        <div class="layout-tr">
+            <label class="weui_label title"><span class="icon"></span>保费</label>
+            <div class="layout-td glb-green">60.00元</div>
+        </div>
+    </section>
+    <section class="weui_cells weui_cells_form first model-form-body">
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+                   <label class="weui_label glb-light-grey">心上人姓名</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" data-blz-type="name" placeholder="请输入心上人姓名" data-blz-alert="心上人姓名格式错误">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>
+           
+            <div class="weui_cell">
+               <div class="weui_cell_hd">
+                   <label class="weui_label glb-light-grey">投保人姓名</label>
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" data-blz-type="name" placeholder="请输入投保人姓名" data-blz-alert="投保人姓名格式错误">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>  
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+                   <label class="weui_label glb-light-grey">投保人身份证号码</label>	
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="text" data-blz-type="id" id="childid" placeholder="请输入投保人身份证号码" data-blz-alert="投保人身份证号码错误"> 
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>
+           
+           <div class="weui_cell">
+               <div class="weui_cell_hd">
+                   <label class="weui_label glb-light-grey">投保人手机号码</label>	
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input id="tel1" class="weui_input" type="tel" data-blz-type="phone" placeholder="请输入投保人手机号码" data-blz-alert="投保人手机号码错误"> 
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>
+           
+           <div class="weui_cell send">
+                 <div class="weui_cell_hd">
+                      <label class="weui_label">验证码</label>
+                 </div>
+                 <div class="weui_cell_bd weui_cell_primary">
+                      <input class="weui_input" type="number" pattern="[0-9]*" data-blz-type="check" data-blz-pattern="设置验证码" placeholder="请输入验证码">
+                 </div>
+                 <div class="glb-form-send" id="glb-form-send"><input type="button" data-blz-target="#tel1" value="获取验证码"></div>
+            </div>
+           
+           <div class="weui_cell last">
+               <div class="weui_cell_hd">
+                   <label class="weui_label glb-light-grey">投保人电子邮箱</label>	
+               </div>
+               <div class="weui_cell_bd weui_cell_primary">
+                   <input class="weui_input" type="email" data-blz-type="email" placeholder="请输入投保人电子邮箱" data-blz-alert="投保人电子邮箱格式错误">
+               </div>
+               <i class="weui_icon_warn"></i>
+           </div>  
+    </section>   
+    <div class=" glb-note glb-text-center glb-grey"><span>-以上须填写心上人及本人真实有效的个人信息-</span></div>
+    <section class="weui_panel glb-green model-agreement">
+    
+        <a href="javascript:void(0);" class="weui_cell weui_cells_access" data-blz-pdf="../images/china-life-toubaoxvzhi.png">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p class="glb-para glb-blue">《投保须知》</p>
+            </div>
+            <div class="weui_cell_ft"></div>
+        </a>
+        
+        <a href="javascript:void(0);" class="weui_cell weui_cells_access" data-blz-pdf="../images/china-life-2+x.png">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p class="glb-para glb-blue">《天安财产保险股份有限公司恋爱消费保条款(2016)》</p>
+            </div>
+            <div class="weui_cell_ft"></div>
+        </a>
+    </section>
+    <section class="layout-tr normal glb-agreement glb-para-sm glb-green"> 	
+        <p class="item glb-black"><label class="agreement glb-para-sm"><input type="checkbox" id="glb-form-agreement" class="glb-icon-squre" checked>我已阅读并同意上述条款</label></p>
+    </section>
+    
+    <div class="layout-tr">
+        <div class="layout-td">
+            <input type="submit" class="weui_btn weui_btn_primary" value="支付保费60.00元">
+        </div>            
+    </div>
+</form>
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/checkcard.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
+    +function($){
+        'use strict';
+        
+        $('form').check({
+			agreementClass:'#glb-form-agreement',
+			verificationCodeClass:'#glb-form-send input', 
+	        getVerificationCode:function($elem){
+                // 验证码发送处
+                // 将获取的验证码设置到input[data-blz-pattern="验证码设置"]中的data-blz-pattern属性即可；
+            }
+	    });
+    }(window.jQuery);  
+</script>
+</html>

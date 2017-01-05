@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>修改密码</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="修改密码">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+<style>
+	.model-form .weui_input {
+		text-align:left;
+	}
+</style>
+</head>
+
+<body ontouchstart="">
+<form class="model-form">
+
+    <h2 class="model-list-title glb-orange">首次登录超级管理账号需修改密码</h2>
+    <section class="model-list-2">
+        <h2 class="weui_cells_title glb-for-screen">登录</h2>
+        <section class="weui_cells weui_cells_form">
+        
+               <div class="weui_cell">
+                   <div class="weui_cell_hd">
+                       <label class="weui_label">新密码</label>	
+                   </div>
+                   <div class="weui_cell_bd weui_cell_primary">
+                       <input class="weui_input new-password" type="password" data-blz-type="any" placeholder="请输入密码">
+                   </div>
+                   <i class="weui_icon_warn"></i>
+               </div> 
+               
+               <div class="weui_cell">
+                   <div class="weui_cell_hd">
+                       <label class="weui_label">再次输入新密码</label>
+                   </div>
+                   <div class="weui_cell_bd weui_cell_primary">
+                       <input class="weui_input" type="password" data-blz-type="repeat" data-blz-same=".new-password" placeholder="请再次输入密码"> 
+                   </div>
+                   <i class="weui_icon_warn"></i>
+               </div> 
+                 
+        </section>
+    </section>
+
+    <div class="layout-tr">
+        <div class="layout-td">
+            <a href="javascript:void(0);" class="weui_btn weui_btn_plain_primary">返回</a>
+        </div>
+        <div class="layout-td">
+            <input type="submit" class="weui_btn weui_btn_primary" value="确认修改">
+        </div>            
+    </div>
+</form>
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+</html>

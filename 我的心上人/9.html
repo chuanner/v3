@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+		<title>确认心上人</title>
+		<meta name="renderer" content="webkit">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="format-detection" content="telephone=no,email=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-title" content="填写投保信息">
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<script type="application/javascript" src="../js/fastclick.js"></script>
+		<script type="application/javascript">
+			function setFontSize() {
+				document.documentElement.style.fontSize = window.innerWidth / 16 + 'px';
+			}
+			setFontSize();
+			window.addEventListener('resize', function() {
+				setFontSize();
+			});
+			window.addEventListener('load', function() {
+				FastClick.attach(document.body);
+			}, false);
+		</script>
+		<link rel="stylesheet" href="../css/weui.min.px.css">
+		<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+		<style>
+			body {
+				position: relative;
+			}
+			
+			.a1 {
+				position: absolute;
+				top: 5.5rem;
+				display: block;
+				width: 100%;
+				height: 2rem;
+			}
+			
+			.a2 {
+				position: absolute;
+				top: 35.8rem;
+				display: block;
+				width: 100%;
+				height: 3rem;
+			}
+			
+			.img1 {
+				position: fixed;
+				bottom: 0;
+				z-index: 999;
+			}
+		</style>
+	</head>
+
+	<body ontouchstart="">
+		<a class="a1" href="7.html"></a>
+		<a class="a2" href="4.html"></a>
+		<img style="width: 100%;" src="../img/xxhhh.png" />
+
+	</body>
+	<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+	<script type="application/javascript" src="../js/checkcard.js"></script>
+	<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+	<script type="application/javascript">
+		+ function($) {
+			'use strict';
+
+			$('form').check({
+				agreementClass: '#glb-form-agreement',
+				verificationCodeClass: '#glb-form-send input',
+				getVerificationCode: function($elem) {
+					// 验证码发送处
+					// 将获取的验证码设置到input[data-blz-pattern="验证码设置"]中的data-blz-pattern属性即可；
+				}
+			});
+		}(window.jQuery);
+	</script>
+
+</html>

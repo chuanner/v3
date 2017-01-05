@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>确认心上人</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="填写投保信息">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+<style>
+    .model-form .weui_label {
+        width:9em;
+        white-space:nowrap;
+    }
+	.model-form .weui_input {
+		text-align:left;
+	}
+</style>
+</head>
+
+<body ontouchstart="">
+
+<img src="../img/dddd.png" style="display:block;width:100%;" onClick="location.href='投保地址.html'">
+</body>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/checkcard.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
+    +function($){
+        'use strict';
+        
+        $('form').check({
+			agreementClass:'#glb-form-agreement',
+			verificationCodeClass:'#glb-form-send input', 
+	        getVerificationCode:function($elem){
+                // 验证码发送处
+                // 将获取的验证码设置到input[data-blz-pattern="验证码设置"]中的data-blz-pattern属性即可；
+            }
+	    });
+    }(window.jQuery);  
+</script>
+</html>

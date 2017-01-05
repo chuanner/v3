@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>奥迪4s店</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="奥迪4s店">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+</head>
+
+<body ontouchstart="">
+<section class="model-message glb-text-center color">
+    <div class="model-mess-body">
+        <p class="glb-para-sm glb-white" style="margin-bottom:15px;">今日确认消费</p>
+        <p class="glb-title-xb number glb-white">100000.00元</p>
+    </div>
+    <div class="model-mess-footer layout-tr glb-white">
+        <div class="layout-td">
+            <p class="glb-para-sm">本周确认消费（元）<br>50000.00</p>
+        </div>
+        <div class="layout-td">
+            <p class="glb-para-sm">累计确认消费（元）<br>60000.00</p>
+        </div>
+    </div>    
+</section>
+<section  class="tyl-qrjl">
+    <h2 class=" weui_cells_title glb-for-screen">表格</h2>
+    <table class="glb-text-center glb-para-sm glb-table" cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th class="glb-para-sm-grey">确认时间</th>
+                <th class="glb-para-sm-grey">消费金额</th>
+                <th class="glb-para-sm-grey">收货手机</th>
+                <th class="glb-para-sm-grey">操作员</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2016-7-2<br>11:22:33</td>
+				<td><div class="glb-text-of-2" style="margin:0">10000.00</div></td>
+				<td><div>18500121537</div></td>
+				<td><div class="glb-text-of-2" style="margin:0">李克</div></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="model-load glb-text-center">
+            <a href="javascript:void(0);" class="glb-note">加载更多</a>
+    </div>
+</section>
+<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
++function($){
+    var load1=document.querySelector('.model-load');
+    var link1=load1.querySelector('a');
+    var h=window.innerHeight;
+    var elem=document.querySelector('tbody');
+    var ajax=true;
+    var old=0;
+    var scrollDown=false;
+    var i=0;
+    // 加载数据
+    function ajaxContent(){
+        link1.innerHTML='加载中<img class="loading" src="../images/loading.gif">';
+        $.ajax({
+            url:'../data/data.json',
+            type:'GET',
+            success: function(data){
+                debugger;
+                var html='',
+                    i=0,
+                    j={};
+                for(;i<data.length;i++){
+                    j=data[i];
+                    html+='<tr>'+
+							'<td>2016-7-2<br>11:22:33</td>'+
+							'<td><div class="glb-text-of-2" style="max-width:5em;margin:0">10000.00</div></td>'+
+							'<td><div style="max-width:7em;">18500121537</div></td>'+
+							'<td><div class="glb-text-of-2" style="max-width: 3em;margin:0;">李克</div></td>'+
+						 '</tr>';
+                }
+                $(html).appendTo(elem);
+                link1.innerHTML='加载更多';
+                ajax=true;
+            },
+            error:function(){
+                $.weui.tip('服务器繁忙，请稍后尝试');
+                link1.innerHTML='加载更多';
+                ajax=true;
+            }
+        });
+    }
+    
+    // 滚动加载
+    $(window).on('scroll',function(e){
+        scrollDown=old<window.scrollY?true:false;
+        old=window.scrollY;
+        var top=load1.getBoundingClientRect().top;
+        if(top+30<=h&&ajax&&scrollDown){
+            ajax=false;
+            ajaxContent();
+        }
+    });
+    
+    // 点击加载
+    $(load1).on('click',function(){
+        if(ajax){
+            ajax=false;
+            ajaxContent();
+        }
+    });
+}(window.jQuery);
+</script>
+</body>
+</html>
