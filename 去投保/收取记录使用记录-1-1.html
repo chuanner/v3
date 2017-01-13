@@ -1,67 +1,228 @@
 <!doctype html>
 <html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+<title>恋爱消费保-消费记录</title>
+<meta name="renderer" content="webkit">
+<meta name="screen-orientation" content="portrait">
+<meta name="x5-orientation" content="portrait">
+<meta name="format-detection" content="telephone=no,email=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="恋爱消费保-消费记录">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<script type="application/javascript" src="../js/fastclick.js"></script> 
+<script type="application/javascript">
+	function setFontSize(){
+        document.documentElement.style.fontSize=window.innerWidth/16+'px';
+    }
+    setFontSize();
+    window.addEventListener('resize',function(){
+        setFontSize();
+    });
+    window.addEventListener('load', function () {
+		FastClick.attach(document.body);
+	}, false);
+</script>
+<link rel="stylesheet" href="../css/weui.min.px.css">
+<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
+	<style>
+		.sqsy-activation,
+		label{
+			display:none !important;
+		}
+		.sqsy-consume-item-box {
+			padding-left:0;
+		}
+		.sqsy-cons-state {
+			display:none;
+		}
+		.ss{
+			display: block;
+			position: absolute;
+			top: 9.5rem;
+			width: 100%;
+			height: 12.5rem;
+		}
+	</style>
+</head>
 
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-		<title>恋爱消费保-消费记录</title>
-		<meta name="renderer" content="webkit">
-		<meta name="screen-orientation" content="portrait">
-		<meta name="x5-orientation" content="portrait">
-		<meta name="format-detection" content="telephone=no,email=no">
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-title" content="恋爱消费保-消费记录">
-		<meta http-equiv="Pragma" content="no-cache">
-		<meta http-equiv="Cache-Control" content="no-cache">
-		<meta http-equiv="Expires" content="0">
-		<script type="application/javascript" src="../js/fastclick.js"></script>
-		<script type="application/javascript">
-			function setFontSize() {
-				document.documentElement.style.fontSize = window.innerWidth / 16 + 'px';
-			}
-			setFontSize();
-			window.addEventListener('resize', function() {
-				setFontSize();
-			});
-			window.addEventListener('load', function() {
-				FastClick.attach(document.body);
-			}, false);
-		</script>
-		<link rel="stylesheet" href="../css/weui.min.px.css">
-		<link rel="stylesheet" href="../css/jin-bang-ti-ming-3.css">
-		<style>
-			.sqsy-activation,
-			label {
-				display: none !important;
-			}
-			
-			.sqsy-consume-item-box {
-				padding-left: 0;
-			}
-			
-			.sqsy-cons-state {
-				display: none;
-			}
-			
-			.ss {
-				display: block;
-				position: absolute;
-				top: 9.5rem;
-				width: 100%;
-				height: 12.5rem;
-			}
-		</style>
-	</head>
-
-	<body style="position: relative;" ontouchstart="" class="animation">
-		<a class="ss" href="收取记录使用记录-3-2.html"></a>
-		<img style="margin-bottom: 2rem;" src="../img/11.png" alt="" style="display:block;">
-		<div class="layout-tr" style="position:fixed;height:2.5rem;width:100%;left:0;bottom:0;z-index:100;padding:0;">
+<body style="position: relative;" ontouchstart="" class="animation">
+	<a class="ss" href="收取记录使用记录-3-2.html"></a>
+	<img style="margin-bottom: 2rem;" src="../img/11.png" alt="" style="display:block;">
+	<div class="layout-tr" style="position:fixed;height:2.5rem;width:100%;left:0;bottom:0;z-index:100;padding:0;">
 			<a style="width:33.333%;height:100%" href="../购物/购物-12-31.html"></a>
 			<a style="width:33.333%;height:100%" href="../去投保/收取记录使用记录-1-1.html"></a>
 			<a style="width:33.333%;height:100%" href="../我的心上人/1.html"></a>
 			<img src="../img/xxssaa.jpg" style="position:absolute;width:100%;height:100%;top:0;left:0;z-index:-1;">
 		</div>
-	</body>
+<!--<div class="model-tab tyl-sq-sy">
+    
+    <div class="model-tab-content animation">
+        
+        收取记录无任何记录或者使用记录无任何记录
+        <p class="zbsj-none" id="tab2 or tab1">暂无记录</p>
+        
+        <div id="tab1" class="glb-fade-out glb-fade-in">
+			<section class="sqsy-summary glb-border-left glb-border-right" style="background-color:#fff;margin-bottom:20px;">
+				<div class="sqsy-summ-para">未确认心上人金额</div>
+				<p class="glb-title-sb glb-red sqsy-summ-number"><span id="total-price">3000.00</span><small>元</small></p>
+				<div class="layout-tr sqsy-summ-donation-understand">
+					<a class="layout-td sqsy-summ-du-item" href="javascript:void(0);" style="color:#333">了解恋爱消费保&gt;</a>
+				</div>
+			</section>
+			<form>
+				<p class="glb-font-12" style="padding: 0 15px;">2016-12</p>
+				<section class="sqsy-consume glb-border-top">
+					<ul>
+						<li class="sqsy-consume-item-box glb-border-bottom">
+							<a class="layout-tr sqsy-consume-item" href="收取记录使用记录-3-2.html">
+								<div class="layout-td glb-text-of-2">
+									<div class="layout-tr" style="padding:0;">
+										<div class="layout-td">2016-12-9<span class="glb-green glb-font-10" style="margin-left: .4em;">已支付保费</span></div>
+										<span class="sqsy-consu-badge-red">国美消费</span>
+									</div>
+									<div class="layout-tr" style="padding:0;">
+										<div class="glb-font-15 layout-td glb-text-of">无印良品MUJI官方旗舰店</div>
+										<div class="glb-font-16"><span class="price">1000.00</span><small>元</small></div>
+									</div>
+									<div class="sqsy-cons-state glb-font-12">
+										商家已支付保费<span class="glb-green">&nbsp;80.00元&nbsp;</span><span class="sqsy-consu-badge-greens">已支付</span><br>
+										你需支付保费<span class="glb-black">&nbsp;20.00元&nbsp;</span><span class="sqsy-consu-badge-greys">未支付</span>
+									</div>
+								</div>
+								<div class="model-pointer"></div>
+							</a>
+							<label class="model-checkbox-label layout-tr"><input class="model-checkbox" type="checkbox" data-type="single"></label>	
+						</li>
+						<li class="sqsy-consume-item-box glb-border-bottom">
+							<a class="layout-tr sqsy-consume-item" href="收取记录使用记录-3-2.html">
+								<div class="layout-td glb-text-of-2">
+									<div class="layout-tr" style="padding:0;">
+										<div class="layout-td">2016-12-9<span class="glb-red glb-font-10" style="margin-left: .4em;">暂未支付保费</span></div>
+										<span class="sqsy-consu-badge-red">2688消费</span>
+									</div>
+									<div class="layout-tr" style="padding:0;">
+										<div class="glb-font-15 layout-td glb-text-of">无印良品MUJI官方旗舰店</div>
+										<div class="glb-font-16"><span class="price">1000.00</span><small>元</small></div>
+									</div>
+									<div class="sqsy-cons-state glb-font-12">
+										商家已支付保费<span class="glb-green">&nbsp;80.00元&nbsp;</span><span class="sqsy-consu-badge-greens">已支付</span><br>
+										你无需支付保费
+									</div>	
+								</div>
+								<div class="model-pointer"></div>
+							</a>
+							<label class="model-checkbox-label layout-tr"><input class="model-checkbox" type="checkbox" data-type="single"></label>	
+						</li>
+						<li class="sqsy-consume-item-box glb-border-bottom">
+							<a class="layout-tr sqsy-consume-item" href="收取记录使用记录-3-2.html">
+								<div class="layout-td glb-text-of-2">
+									<div class="layout-tr" style="padding:0;">
+										<div class="layout-td">2016-12-9</div>
+										<span class="sqsy-consu-badge-golden">好友转赠</span>
+									</div>
+									<div class="layout-tr" style="padding:0;">
+										<div class="glb-font-15 layout-td glb-text-of">好友&nbsp;李霞&nbsp;转赠给你</div>
+										<div class="glb-font-16"><span class="price">500.00</span><small>元</small></div>
+									</div>	
+								</div>
+								<div class="model-pointer"></div>
+							</a>
+							<label class="model-checkbox-label layout-tr"><input class="model-checkbox" type="checkbox" data-type="single"></label>	
+						</li>
+						<li class="sqsy-consume-item-box glb-border-bottom">
+							<a class="layout-tr sqsy-consume-item" href="收取记录使用记录-3-2.html">
+								<div class="layout-td glb-text-of-2">
+									<div class="layout-tr" style="padding:0;">
+										<div class="layout-td">2016-12-9</div>
+										<span class="sqsy-consu-badge-golden">好友转赠</span>
+									</div>
+									<div class="layout-tr" style="padding:0;">
+										<div class="glb-font-15 layout-td glb-text-of">好友&nbsp;李想&nbsp;转赠给你</div>
+										<div class="glb-font-16"><span class="price">500.00</span><small>元</small></div>
+									</div>	
+								</div>
+								<div class="model-pointer"></div>
+							</a>
+							<label class="model-checkbox-label layout-tr"><input class="model-checkbox" type="checkbox" data-type="single"></label>	
+						</li>
+						
+					</ul>
+				</section>
+				<section class="sqsy-activation glb-border-top layout-tr">
+					<label class="model-checkbox-label layout-tr"><input id="total-checkbox" class="model-checkbox" type="checkbox" data-type="total"></label>
+					<div class="layout-td">
+						<div class="glb-red" style="color:#c61a58;font-size:25px;"><span id="discount" data-blz-mapped="1">0.00</span><small>元</small></div>
+					</div>
+					<input type="submit" class="weui_btn weui_btn_primary" value="去投保" disabled >
+					测试用button
+					<a href="表单-填写投保信息.html">下一页</a>
+					测试用button-->
+<!--				</section>
+				
+			</form>
+		</div>
+    </div>        
+</div>
+</body>-->
+</body>
+<!--<script type="application/javascript" src="../js/jquery-3.1.0.js"></script>
+<script type="application/javascript" src="../js/jin-bang-ti-ming-3.js"></script>
+<script type="application/javascript">
+	+function($){
+		use strict';
+		
+		var $Discount=$('#discount');
+		var count=0,
+			totalPrice=0;
+		var inputs=document.forms[0],
+			i=0,
+			l=inputs.length;
+		
+		 每当商品被选中时更新显示的总价
+		$(document.forms[0]).on('change','[data-type="single"]',function(event){
+			var price=$(this).closest('.sqsy-consume-item-box').find('.price').text()-0;
+			var symbol=this.checked?1:-1;
+			
+			totalPrice=totalPrice+symbol*price;
+			$Discount.text((totalPrice*$Discount.data('blz-mapped')).toFixed(2));
+			if(symbol===-1){
+				count--;
+				document.getElementById('total-checkbox').checked=false;
+			}else {
+				count++;
+			}
+			if(count<=0){
+				inputs[inputs.length-1].disabled=true;
+			}else {
+				inputs[inputs.length-1].disabled=false;
+			}
+			 转换规则？
 
+		}).on('change','[data-type="total"]',function(){
+			var l=inputs.length,
+				i=0;
+			
+			 遍历待优化
+			for(;i<l-2;i++){
+				if(inputs[i].checked===this.checked){
+					
+				}else{
+					inputs[i].checked=this.checked;
+					$(inputs[i]).trigger('change');
+				}
+			};
+		});
+		
+		 遍历input初始化金额
+		for(i=0;i<l-2;i++){
+			if(inputs[i].checked){
+				$(inputs[i]).trigger('change');
+			}
+		}
+	}(window.jQuery);
+</script>-->
 </html>
